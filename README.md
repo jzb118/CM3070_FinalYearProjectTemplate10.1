@@ -15,7 +15,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository:**
    ```bash
    git clone <your-repository-url>
-   cd mobileapp
+   cd <project folder which have the src, assets folder>
    ```
 
 2. **Install dependencies:**
@@ -24,9 +24,6 @@ Before you begin, ensure you have the following installed:
    # or
    yarn install
    ```
-
-3. **Configure Environment Variables (If any):**
-   - Create a `.env` file in the root directory if you need to set up Firebase or other API keys locally.
 
 ## Running the App Locally
 
@@ -37,6 +34,10 @@ npm start
 # or
 npx expo start
 ```
+
+
+To kill expo
+taskkill /IM node.exe /F
 
 This will run the Metro Bundler in your terminal. From there, you can:
 - **Run on an Android emulator**: Press `a`.
@@ -51,3 +52,4 @@ This will run the Metro Bundler in your terminal. From there, you can:
 - `src/services/` - Contains logic for connecting to databases (Firebase, etc.).
 - `src/utils/` - Utility functions, themes, and constants.
 - `App.js` - The main entry point of the React Native application.
+
