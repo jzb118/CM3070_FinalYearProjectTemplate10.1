@@ -53,7 +53,7 @@ export const ReportService = {
         }
     },
 
-    // Get all reports (for the map)
+    // Get all reports 
     getAllReports: async () => {
         try {
             const reports = await db.getAllAsync('SELECT * FROM reports ORDER BY timestamp DESC');

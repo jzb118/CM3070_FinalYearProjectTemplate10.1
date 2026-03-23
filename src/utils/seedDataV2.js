@@ -31,16 +31,16 @@ export const seedDatabase = async () => {
             console.log("Database already seeded. Cleanup complete.");
         }
 
-        /* ------------------------------------------
+        /*
          * HAZARDS (Disasters Only - No Fire)
-         * ------------------------------------------ */
+         *  */
         const hazards = [
             { id: "flood", name: "Flood", icon: "water", description: `Overflow of water onto normally dry land.` },
             { id: "earthquake", name: "Earthquake", icon: "earth", description: `Sudden shaking of the ground.` },
             { id: "tsunami", name: "Tsunami", icon: "water", description: `Long high sea wave caused by an earthquake.` },
         ];
 
-        // Always ensure 'safe' hazards exist (UPSERT logic via INSERT OR IGNORE)
+        //  Ensure 'safe' hazards exist 
         for (const h of hazards) {
             await db.runAsync(
                 "INSERT OR IGNORE INTO hazards (id, name, icon, description) VALUES (?, ?, ?, ?)",
@@ -48,11 +48,11 @@ export const seedDatabase = async () => {
             );
         }
 
-        // Always ensure new quiz questions exist (q6-q10 expansion)
+        //  Ensure new quiz questions exist 
         const expansionQuizIds = [
-            'flood_q6','flood_q7','flood_q8','flood_q9','flood_q10',
-            'earthquake_q6','earthquake_q7','earthquake_q8','earthquake_q9','earthquake_q10',
-            'tsunami_q6','tsunami_q7','tsunami_q8','tsunami_q9','tsunami_q10',
+            'flood_q6', 'flood_q7', 'flood_q8', 'flood_q9', 'flood_q10',
+            'earthquake_q6', 'earthquake_q7', 'earthquake_q8', 'earthquake_q9', 'earthquake_q10',
+            'tsunami_q6', 'tsunami_q7', 'tsunami_q8', 'tsunami_q9', 'tsunami_q10',
         ];
         const expansionQuizzes = {
             flood_q6: { hazard_id: "flood", question: "What is a flash flood?", options: JSON.stringify(["A flood caused by rapid rainfall", "A flood from the ocean", "A slow-moving flood"]), correct_answer: 0 },
@@ -112,9 +112,9 @@ export const seedDatabase = async () => {
         // If we just cleaned up, we might not need to re-seed everything unless it requires full seed
         if (!needsFullSeed) return;
 
-        /* ------------------------------------------
+        /* 
          * QUIZZES
-         * ------------------------------------------ */
+         *  */
         const quizzes = [
             // FLOOD
             {
@@ -212,7 +212,7 @@ export const seedDatabase = async () => {
                 correct_answer: 2,
             },
 
-            // FLOOD (q6-q10)
+            // FLOOD 
             {
                 id: "flood_q6", hazard_id: "flood",
                 question: `What is a flash flood?`,
@@ -244,7 +244,7 @@ export const seedDatabase = async () => {
                 correct_answer: 0,
             },
 
-            // EARTHQUAKE (q6-q10)
+            // EARTHQUAKE 
             {
                 id: "earthquake_q6", hazard_id: "earthquake",
                 question: `What scale measures earthquake magnitude?`,
@@ -276,7 +276,7 @@ export const seedDatabase = async () => {
                 correct_answer: 0,
             },
 
-            // TSUNAMI (q6-q10)
+            // TSUNAMI 
             {
                 id: "tsunami_q6", hazard_id: "tsunami",
                 question: `How far inland can a tsunami travel?`,
@@ -316,9 +316,9 @@ export const seedDatabase = async () => {
             );
         }
 
-        /* ------------------------------------------
+        /* 
          * GUIDES
-         * ------------------------------------------ */
+         *  */
         const guides = [
             // Flood
             {
@@ -386,9 +386,9 @@ export const seedDatabase = async () => {
             );
         }
 
-        /* ------------------------------------------
+        /* 
          * CHECKLISTS
-         * ------------------------------------------ */
+         *  */
         const checklists = [
             // Flood
             { id: "flood_c1", guide_id: "flood_g1", item_text: `Assemble emergency kit water, food, first aid` },
@@ -420,9 +420,9 @@ export const seedDatabase = async () => {
             );
         }
 
-        /* ------------------------------------------
+        /* 
          * SAMPLE CASES (inserted into reports table)
-         * ------------------------------------------ */
+         *  */
         const cases = [
             { type: "flood", latitude: 1.3521, longitude: 103.8198, description: `Severe flooding in downtown area`, timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString() },
             { type: "earthquake", latitude: 1.3700, longitude: 103.8500, description: `Minor tremors felt`, timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString() },
@@ -435,9 +435,9 @@ export const seedDatabase = async () => {
             );
         }
 
-        /* ------------------------------------------
+        /* 
          * NEWS
-         * ------------------------------------------ */
+         *  */
         const news = [
             {
                 title: `Flood Warning Issued`,

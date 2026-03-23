@@ -26,6 +26,7 @@ Before you begin, ensure you have the following installed:
    yarn install
    ```
 
+Please use Expo Go 2.32.19
 ## Running the App Locally
 
 Start the Expo development server:
@@ -53,4 +54,37 @@ This will run the Metro Bundler in your terminal. From there, you can:
 - `src/services/` - Contains logic for connecting to databases (Firebase, etc.).
 - `src/utils/` - Utility functions, themes, and constants.
 - `App.js` - The main entry point of the React Native application.
+
+
+If you're reviewing this project (for firebase):
+
+1. The Firebase configuration is already set up in `src/config/firebase.js`
+2. Simply run `npm install`(if there is no node modules) and `npx expo start`
+3. The app will connect to the existing Firebase project
+4. You can create reports and see them sync in real-time
+
+## Troubleshooting
+
+### "Permission denied" errors
+- Check that your Database and Storage rules are set to test mode
+- Verify the rules were published
+
+### Photos not uploading
+- Ensure Storage is enabled
+- Check Storage rules allow write access
+- Verify the storage bucket URL in firebase.js
+
+### Reports not syncing
+- Check internet connection
+- Look at console logs for error messages
+- Verify database URL in firebase.js is correct
+
+### "Firebase app not initialized"
+- Make sure you've replaced ALL placeholder values in firebase.js
+- Restart the Expo dev server
+
+## Security Notes
+
+**IMPORTANT**: The current setup uses test mode rules that allow anyone to read/write data. 
+
 

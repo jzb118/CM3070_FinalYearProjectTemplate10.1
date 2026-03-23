@@ -446,7 +446,7 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor: theme.colors.border,
     },
-    // Language Modal styles
+    // language Modal styles
     modalOverlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.6)',

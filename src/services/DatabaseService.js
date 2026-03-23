@@ -2,21 +2,18 @@ import * as SQLite from "expo-sqlite";
 
 const db = SQLite.openDatabaseSync("disaster_app_v3.db");
 
-/* -----------------------------------------------------
-   🔧 REQUIRED HELPERS (Missing in your original code)
------------------------------------------------------ */
 
 // Runs INSERT / UPDATE / DELETE
 export const runAsync = (sql, params = []) => {
   return db.runAsync(sql, params);
 };
 
-// Returns all rows from a SELECT
+// Returns all rows 
 export const getAllAsync = (sql, params = []) => {
   return db.getAllAsync(sql, params);
 };
 
-// Returns FIRST row from a SELECT
+// Returns FIRST row 
 export const getFirstAsync = async (sql, params = []) => {
   const rows = await db.getAllAsync(sql, params);
   return rows?.length ? rows[0] : null;
@@ -112,8 +109,8 @@ export const initDatabase = async () => {
       );
     `);
 
-    // Safely add url column to existing tables (fails gracefully if it already exists)
-    await db.execAsync("ALTER TABLE news ADD COLUMN url TEXT;").catch(() => {});
+    // Safely add url column to existing tables 
+    await db.execAsync("ALTER TABLE news ADD COLUMN url TEXT;").catch(() => { });
 
 
     console.log("Database initialized successfully");
@@ -122,9 +119,9 @@ export const initDatabase = async () => {
   }
 };
 
-/* -----------------------------------------------------
-   EXPORT DB INSTANCE (same as before)
------------------------------------------------------ */
+/* 
+   EXPORT DB INSTANCE 
+ */
 export const getDB = () => {
   return {
     ...db,

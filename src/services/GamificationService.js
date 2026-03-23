@@ -31,7 +31,7 @@ export const GamificationService = {
             const count = await db.getFirstAsync('SELECT count(*) as count FROM user_progress');
             console.log(`DEBUG: Quiz submitted. Total progress rows: ${count?.count}`);
 
-            // BACKUP: Save to AsyncStorage
+            //  Save to AsyncStorage
             await this.backupProgress(quizId);
 
             return true;
@@ -84,23 +84,23 @@ export const GamificationService = {
     async getUserStats() {
         const db = getDB();
         try {
-            // 1. Get total quizzes available (denominator for preparedness)
+            //  Get total quizzes available (denominator for preparedness)
             const totalQuizzesResult = await db.getFirstAsync('SELECT count(*) as count FROM quizzes');
             const totalQuizzes = totalQuizzesResult?.count || 1; // Avoid divide by zero
 
-            // 2. Get completed quizzes (numerator)
+            // Get completed quizzes (numerator)
             const completedResult = await db.getAllAsync('SELECT DISTINCT quiz_id FROM user_progress');
             const completedQuizIds = completedResult.map(r => r.quiz_id);
             const quizzesCompletedCount = completedQuizIds.length;
 
-            // 3. Calculate Preparedness Level %
+            //  Calculate Preparedness Level %
             const preparednessLevel = Math.min(100, Math.round((quizzesCompletedCount / totalQuizzes) * 100));
 
-            // 4. Calculate Badges
+            //  Calculate Badges
             const badges = await this.getAllBadges(completedQuizIds);
             const badgesEarnedCount = badges.filter(b => b.unlocked).length;
 
-            // 5. Calculate "Hazards Completed"
+            // Calculate "Hazards Completed"
             // We define "Hazard Completed" as having finished all quizzes for a specific hazard
             // First, get all quizzes grouped by hazard
             const allQuizzes = await db.getAllAsync('SELECT id, hazard_id FROM quizzes');
@@ -139,7 +139,7 @@ export const GamificationService = {
     },
 
     async getAllBadges(completedQuizIds = []) {
-        // If not provided, fetch them (legacy support)
+        // If not provided, fetch them (
         if (completedQuizIds.length === 0) {
             const db = getDB();
             const res = await db.getAllAsync('SELECT DISTINCT quiz_id FROM user_progress');
@@ -159,9 +159,7 @@ export const GamificationService = {
                 name: 'Flood Ready',
                 description: 'Completed all Flood quizzes',
                 icon: 'water',
-                // Logic: check if all flood quizzes are in completedQuizIds. 
-                // For simplicity/performance without extra DB calls here, we assume predictable IDs or check specific known ones if possible.
-                // Dynamic check is better but complex. Let's assume unlocked if at least 1 flood quiz is done for now or matching regex.
+                // Logic: check if all flood quizzes are in completedQuizIds.
                 unlocked: completedQuizIds.some(id => id.includes('flood'))
             },
             {

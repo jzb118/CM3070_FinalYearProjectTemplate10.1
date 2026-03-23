@@ -40,8 +40,5 @@ yarn-error.*
 /ios
 /android
 
-# custom ignored docs
-CM3070mockexam.txt
-DISASTER_REPORTING_README.md
-yeechong_draft.txt
+
 

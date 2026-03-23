@@ -136,10 +136,10 @@ export const translations = {
         // About content
         aboutDescription: 'Local Smart Disaster Preparedness App helps you stay informed and prepared for natural disasters in your area. The app provides real-time hazard awareness, educational content, and community-driven reporting to keep you and your community safe.',
         aboutFeatures: 'Key Features',
-        aboutFeature1: '📍 Live Map — View disaster reports in real-time on an interactive map and receive proximity-based danger alerts.',
-        aboutFeature2: '📚 Preparedness Guides — Step-by-step guides and checklists for floods, earthquakes, tsunamis, and more.',
-        aboutFeature3: '🧠 Knowledge Quizzes — Test your disaster preparedness knowledge, earn badges, and track your progress.',
-        aboutFeature4: '📝 Community Reporting — Report hazards in your area to help others stay informed. Reports sync automatically when online.',
+        aboutFeature1: ' Live Map — View disaster reports in real-time on an interactive map and receive proximity-based danger alerts.',
+        aboutFeature2: ' Preparedness Guides — Step-by-step guides and checklists for floods, earthquakes, tsunamis, and more.',
+        aboutFeature3: ' Knowledge Quizzes — Test your disaster preparedness knowledge, earn badges, and track your progress.',
+        aboutFeature4: ' Community Reporting — Report hazards in your area to help others stay informed. Reports sync automatically when online.',
         contactUs: 'Contact Us',
 
         // Privacy content
@@ -288,10 +288,10 @@ export const translations = {
         // About content
         aboutDescription: 'Aplikasi Kesediaan Bencana Pintar Tempatan membantu anda sentiasa maklum dan bersedia menghadapi bencana alam di kawasan anda. Aplikasi ini menyediakan kesedaran bahaya masa nyata, kandungan pendidikan, dan pelaporan komuniti untuk menjaga keselamatan anda.',
         aboutFeatures: 'Ciri-ciri Utama',
-        aboutFeature1: '📍 Peta Langsung — Lihat laporan bencana secara langsung di peta interaktif dan terima amaran bahaya berdasarkan jarak.',
-        aboutFeature2: '📚 Panduan Kesediaan — Panduan langkah demi langkah dan senarai semak untuk banjir, gempa bumi, tsunami dan lain-lain.',
-        aboutFeature3: '🧠 Kuiz Pengetahuan — Uji pengetahuan kesediaan bencana anda, kumpul lencana, dan jejak kemajuan anda.',
-        aboutFeature4: '📝 Pelaporan Komuniti — Laporkan bahaya di kawasan anda untuk membantu orang lain kekal maklum. Laporan disegerak secara automatik.',
+        aboutFeature1: ' Peta Langsung — Lihat laporan bencana secara langsung di peta interaktif dan terima amaran bahaya berdasarkan jarak.',
+        aboutFeature2: ' Panduan Kesediaan — Panduan langkah demi langkah dan senarai semak untuk banjir, gempa bumi, tsunami dan lain-lain.',
+        aboutFeature3: ' Kuiz Pengetahuan — Uji pengetahuan kesediaan bencana anda, kumpul lencana, dan jejak kemajuan anda.',
+        aboutFeature4: ' Pelaporan Komuniti — Laporkan bahaya di kawasan anda untuk membantu orang lain kekal maklum. Laporan disegerak secara automatik.',
         contactUs: 'Hubungi Kami',
 
         // Privacy content
@@ -440,10 +440,10 @@ export const translations = {
         // About content
         aboutDescription: 'ဒေသတွင်း ဘေးအန္တရာယ် ကြိုတင်ပြင်ဆင်ရေး အက်ပ်သည် သင့်ဧရိယာရှိ သဘာဝ ဘေးအန္တရာယ်များအတွက် သတင်းအချက်အလက် ရယူပြီး ပြင်ဆင်ထားနိုင်ရန် ကူညီပေးပါသည်။ အချိန်နှင့်တပြေးညီ ဘေးအန္တရာယ် သတိပေးချက်၊ ပညာရေး အကြောင်းအရာနှင့် လူထု သတင်းပို့ခြင်း ပါဝင်ပါသည်။',
         aboutFeatures: 'အဓိက လုပ်ဆောင်ချက်များ',
-        aboutFeature1: '📍 တိုက်ရိုက် မြေပုံ — ဘေးအန္တရာယ် အစီရင်ခံစာများကို မြေပုံပေါ်တွင် ကြည့်ပြီး အနီးအနား အန္တရာယ် သတိပေးချက် လက်ခံပါ။',
-        aboutFeature2: '📚 ပြင်ဆင်ရေး လမ်းညွန် — ရေကြီးခြင်း၊ ငလျင်၊ ဆူနာမီ အတွက် အဆင့်ဆင့် လမ်းညွန်နှင့် စစ်ဆေးစာရင်း။',
-        aboutFeature3: '🧠 ဗဟုသုတ ပဟေဠိ — ဘေးအန္တရာယ် ပြင်ဆင်မှု ဗဟုသုတကို စမ်းသပ်ပါ၊ တံဆိပ်များ ရယူပါ။',
-        aboutFeature4: '📝 လူထု သတင်းပို့ခြင်း — သင့်ဧရိယာရှိ ဘေးအန္တရာယ်ကို သတင်းပို့ပါ။ အွန်လိုင်းဖြစ်သောအခါ အလိုအလျောက် ချိတ်ဆက်ပါသည်။',
+        aboutFeature1: ' တိုက်ရိုက် မြေပုံ — ဘေးအန္တရာယ် အစီရင်ခံစာများကို မြေပုံပေါ်တွင် ကြည့်ပြီး အနီးအနား အန္တရာယ် သတိပေးချက် လက်ခံပါ။',
+        aboutFeature2: ' ပြင်ဆင်ရေး လမ်းညွန် — ရေကြီးခြင်း၊ ငလျင်၊ ဆူနာမီ အတွက် အဆင့်ဆင့် လမ်းညွန်နှင့် စစ်ဆေးစာရင်း။',
+        aboutFeature3: ' ဗဟုသုတ ပဟေဠိ — ဘေးအန္တရာယ် ပြင်ဆင်မှု ဗဟုသုတကို စမ်းသပ်ပါ၊ တံဆိပ်များ ရယူပါ။',
+        aboutFeature4: ' လူထု သတင်းပို့ခြင်း — သင့်ဧရိယာရှိ ဘေးအန္တရာယ်ကို သတင်းပို့ပါ။ အွန်လိုင်းဖြစ်သောအခါ အလိုအလျောက် ချိတ်ဆက်ပါသည်။',
         contactUs: 'ဆက်သွယ်ရန်',
 
         // Privacy content

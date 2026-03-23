@@ -94,7 +94,7 @@ export default function HomeScreen({ navigation }) {
             try {
                 const response = await fetch('https://content.guardianapis.com/search?q=disaster%20OR%20climate&api-key=test&show-fields=thumbnail,trailText');
                 const data = await response.json();
-                
+
                 if (data.response && data.response.results && data.response.results.length > 0) {
                     const mappedNews = data.response.results.slice(0, 5).map((item) => ({
                         id: item.id,
@@ -227,7 +227,7 @@ export default function HomeScreen({ navigation }) {
                             <TouchableOpacity
                                 style={styles.viewMoreButton}
                                 onPress={() => {
-                                    // Future: Navigate to all news
+                                    //Navigate to all news
                                     console.log('View all news');
                                 }}
                                 activeOpacity={0.7}

@@ -257,7 +257,7 @@ export default function MapScreen() {
             await loadSyncStatus();
             handleManualSync().catch(err => console.error('Auto-sync error:', err));
 
-            // Delay notification so it fires AFTER the Alert dialog is visible
+            // Delay notification so it triggers after the alert dialog is visible
             setTimeout(async () => {
                 // Directly notify for the user's own report
                 const notificationsEnabled = await StorageService.getNotificationSettings();
@@ -293,7 +293,7 @@ export default function MapScreen() {
         }
     };
 
-    // HTML Content for the WebView
+    // html Content for the WebView
     const mapHtml = `
       <!DOCTYPE html>
       <html>

@@ -49,7 +49,7 @@ export default function CasesScreen({ route, navigation }) {
 
     const calculateDistance = (lat, lon) => {
         // Mock distance calculation - in real app, use user's location
-        // For now, return random distance between 0.5 and 5 km
+        //  return random distance between 0.5 and 5 km
         return (Math.random() * 4.5 + 0.5).toFixed(1);
     };
 

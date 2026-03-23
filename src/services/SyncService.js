@@ -15,7 +15,7 @@ export const SyncService = {
             return state.isConnected === true;
         } catch (error) {
             console.error('Error checking connectivity:', error);
-            // Assume connected if we can't check (fail open for development)
+
             return true;
         }
     },
@@ -25,22 +25,22 @@ export const SyncService = {
      */
     async uploadReport(report) {
         try {
-            console.log('📤 Starting upload for report:', report.id, report.type);
+            console.log(' Starting upload for report:', report.id, report.type);
 
             const reportsRef = ref(database, 'reports');
-            console.log('✅ Got database reference');
+            console.log(' Got database reference');
 
             const newReportRef = push(reportsRef);
-            console.log('✅ Created new report reference:', newReportRef.key);
+            console.log(' Created new report reference:', newReportRef.key);
 
             let photoUrl = null;
 
             // Upload photo if exists
             if (report.photo_uri) {
-                console.log('📸 Photo found, uploading...');
+                console.log(' Photo found, uploading...');
                 try {
                     photoUrl = await this.uploadPhoto(report.photo_uri, newReportRef.key);
-                    console.log('✅ Photo uploaded:', photoUrl);
+                    console.log(' Photo uploaded:', photoUrl);
                 } catch (photoError) {
                     console.error('❌ Photo upload failed:', photoError);
                     console.error('Photo error details:', photoError.message);
@@ -61,17 +61,17 @@ export const SyncService = {
                 localId: report.id, // Keep reference to local ID
             };
 
-            console.log('📝 Prepared Firebase report data:', firebaseReport);
+            console.log(' Prepared Firebase report data:', firebaseReport);
 
             // Upload to Firebase with timeout
-            console.log('🚀 Uploading to Firebase...');
+            console.log(' Uploading to Firebase...');
 
             try {
                 // Add a timeout to catch hanging requests, with proper cleanup
                 const uploadPromise = set(newReportRef, firebaseReport);
                 let timeoutId;
                 const timeoutPromise = new Promise((_, reject) => {
-                    timeoutId = setTimeout(() => reject(new Error('Firebase upload timeout after 10 seconds')), 10000);
+                    timeoutId = setTimeout(() => reject(new Error('Firebase upload timeout after 30 seconds')), 30000);
                 });
 
                 try {
@@ -345,7 +345,7 @@ export const SyncService = {
 
         return NetInfo.addEventListener(state => {
             if (state.isConnected === true) {
-                // Debounce: wait 2 seconds before syncing to avoid multiple rapid calls
+                //  wait 2 seconds before syncing to avoid multiple rapid calls
                 if (syncTimeout) clearTimeout(syncTimeout);
 
                 syncTimeout = setTimeout(() => {
