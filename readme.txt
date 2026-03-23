@@ -63,6 +63,12 @@ If you're reviewing this project (for firebase):
 3. The app will connect to the existing Firebase project
 4. You can create reports and see them sync in real-time
 
+Firebase Credentials:-
+
+Username:simuolfypjazib@gmail.com
+
+Password:simuol112231
+
 ## Troubleshooting
 
 ### "Permission denied" errors
